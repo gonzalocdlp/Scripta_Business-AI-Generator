@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Website Generator</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@800;900&display=swap');
+        </style>
+    
+</head>
+<body>
+    <header>
+<ul>
+    <li><a href="#info">FAQ</a></li>
+</ul>
+
+    </header>
+    <main>
+        <!-- <div class="column">
+            <div class="row">
+                
+         <br>  
+         <br>   
+        <h1>Create websites<br/>in seconds <br/> with AI!</h1>
+        <p>Create text for a business website in seconds instead of hours and rank with SEO</p>
+        <button class="buttonMain">generate a website</button>
+        </div> -->
+        <div class="row">
+                
+            <h2>Write with AI</h2>
+        </div>
+            <div class="row">
+            <h1>finish your site in seconds</h1>
+        <p>Create text for a business website in seconds instead of hours and rank with SEO</p>
+    </div>
+        <div id="heroButtons">
+
+
+        
+        <button class="buttonMain">Generate website</button>
+        <button class="buttonSecondary">View Examples</button>
+            <br>
+    </div>
+    </main>
+    <br>
+    <form action="generate" method="post" id="rainbow">
+        <h3>Generate your business text</h3>
+        <br>
+        <div class="form">
+        
+        <input type="text" name="bizName" placeholder="Business name">
+        
+        <input type="text" name="bizType" placeholder="Type of business. Example: Photography, Painting">
+        
+        <input type="text" name="ownerName" placeholder="Full name of owner include your last name">
+        
+        <input type="text" name="keywords" placeholder="Keywords for text seperated by comma">
+        <br>
+        
+        </div>
+        <input type="submit" value="Generate" id="generate">
+        <br>
+        {% for message in get_flashed_messages() %}
+             <p class="white">{{ message }}</p>
+         {% endfor %}
+</form>
+<div class="column">
+    <div class="row">
+        <div class="about">
+            <p class="bigText">How AI helps SEO</p>
+<p class="normalText">When it comes to improving your website's search engine optimization, AI written content can be a powerful tool. Not only can AI written content help you to target your audience more effectively, but it can also help to improve your overall website's appearance.
+    <br>
+    <br>
+    <br>
+        By using AI written content, you can ensure that your website's content is both relevant and engaging. This can help to improve your website's overall usability and ranking within search engines.
+    </p>
+    </div>
+</div>
+<div class="row">
+    <figure>
+    <img src="/static/images/aiwithflowerhead.JPG" alt="Robot with flowers in head" >
+    <figcaption>Image genererated by DALLE-2</figcaption>
+</figure>
+</div> 
+</div> 
+<!-- how Ai writing works -->
+<div class="column">
+    <div class="row">
+        <figure>
+            <img src="/static/images/aiinbeach.JPG" alt="Robot with flowers in head" >
+            <figcaption>Image genererated by DALLE-2</figcaption>
+        </figure>
+</div>
+<div class="row">
+    <div class="about">
+        <p class="bigText">How AI writing works</p>
+<p class="normalText">AI writing works by taking a piece of text and breaking it down into individual words, sentences, and paragraphs. 
+    <br>
+<br>
+<br>
+Once the text is broken down into its smallest parts, a computer can then start to analyze it and identify the different words and phrases that are most important. After the computer has identified the most important words and phrases, it can then start to generate new text based on those keywords.
+</p>
+</div>
+
+</div> 
+</div> 
+
+<footer>
+    <p class="white">Created by Gonzalo</p>
+ </footer>
+ 
+</body>
+</html>
