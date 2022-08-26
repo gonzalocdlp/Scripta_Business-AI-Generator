@@ -7,6 +7,8 @@
     <title>Scripta: Generate Business text for your Website with AI</title>
     <link rel="stylesheet" href="/static/css/main.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='/static/images/favicon.ico')}}">
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@800;900&display=swap');
         </style>
@@ -20,15 +22,7 @@
 
     </header>
     <main>
-        <!-- <div class="column">
-            <div class="row">
-                
-         <br>  
-         <br>   
-        <h1>Create websites<br/>in seconds <br/> with AI!</h1>
-        <p>Create text for a business website in seconds instead of hours and rank with SEO</p>
-        <button class="buttonMain">generate a website</button>
-        </div> -->
+      
         <div class="row">
                 
             <h2>Write with AI</h2>
@@ -59,13 +53,23 @@
         <input type="text" name="ownerName" placeholder="Full name of owner include your last name">
         
         <input type="text" name="keywords" placeholder="Keywords for text seperated by comma">
+        <input type="text" name="location" placeholder="location of your business">
+        <input type="text" name="service1" placeholder="One of your services ex: Roof Painting">
+        <input type="text" name="service2" placeholder="One of your services ex: Roof Painting">
+        <input type="text" name="service3" placeholder="One of your services ex: Roof Painting">
         <br>
         
         </div>
         <input type="submit" value="Generate" id="generate">
         <br>
+
+        <h3>{{heading_1}}</h3>
+        {{heading_2}}
+        {{heading_3}}
+        {{heading_4}}
         {% for message in get_flashed_messages() %}
              <p class="white">{{ message }}</p>
+             <br>
          {% endfor %}
 </form>
 <div class="column">
