@@ -16,7 +16,8 @@ def index():
 @app.route("/generate", methods=["POST", "GET"])    
 def generate():
     if request.method == 'POST':
-        tokenAmount=10
+        tokenAmount=300
+        tokenTitles=30
         openai.organization = "org-SnuqljBeSr8VdBfdkdiUOGb8"
         openai.api_key = authapi.apikey
         openai.Model.list()
@@ -28,10 +29,10 @@ def generate():
         service1=request.form['service1']
         service2=request.form['service2']
         service3=request.form['service3']
-        heading1=openai.Completion.create(engine="text-curie-001", prompt=f"generate a title for {businessType} in {location}", max_tokens=12)
-        heading2=openai.Completion.create(engine="text-curie-001", prompt=f"generate a title for an about section for {businessName} that does {businessType} in {location}", max_tokens=12)
-        heading3=openai.Completion.create(engine="text-curie-001", prompt=f"generate a title for service section for {businessType} in {location}", max_tokens=12)
-        heading4=openai.Completion.create(engine="text-curie-001", prompt=f"generate a title for why you should hire {businessName} that does {businessType} in {location}", max_tokens=12)
+        heading1=openai.Completion.create(engine="text-curie-001", prompt=f"generate a title for {businessType} in {location}", max_tokens=tokenTitles)
+        heading2=openai.Completion.create(engine="text-curie-001", prompt=f"generate a title for an about section for {businessName} that does {businessType} in {location}", max_tokens=tokenTitles)
+        heading3=openai.Completion.create(engine="text-curie-001", prompt=f"generate a title for service section for {businessType} in {location}", max_tokens=tokenTitles)
+        heading4=openai.Completion.create(engine="text-curie-001", prompt=f"generate a title for why you should hire {businessName} that does {businessType} in {location}", max_tokens=tokenTitles)
 
         heading_1=heading1['choices'][0]['text']
         heading_2=heading2['choices'][0]['text']
@@ -79,7 +80,7 @@ def generate():
         About=aboutRes['choices'][0]['text']
         Service=serviceRes['choices'][0]['text']
         HireUs=hireUsRes['choices'][0]['text']
-    return render_template("index.html", General)
+    return render_template('index.html', **locals())
 
 
 # openai.organization = "org-SnuqljBeSr8VdBfdkdiUOGb8"
