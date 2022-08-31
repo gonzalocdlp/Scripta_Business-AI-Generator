@@ -15,10 +15,13 @@ Note: due to how OpenAI works you have to fine-tune your own model
 
 
 #How to fine-tune your own model:
-create openaiapikey.txt and add your key
 
-add your own or use my json prompts and results (200 examples is the minimum for best results)
+1.- create openaiapikey.txt and add your key
 
-run fine-tune.py
+2.-add your own or use my json prompts and results (200 examples is the minimum for best results)
 
-grab the id in OpenAI
+3.-run fine-tune.py
+
+4.-grab the id in OpenAI
+
+5.- Replace instinces with your own fine-tune id
