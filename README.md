@@ -14,7 +14,7 @@ Note: due to how OpenAI works you have to fine-tune your own model
 3.- find the directory in anaconda3 and run flask
 
 
-#How to fine-tune your own model:
+# How to fine-tune your own model:
 
 1.- create openaiapikey.txt and add your key
 
